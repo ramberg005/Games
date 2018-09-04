@@ -1,0 +1,11 @@
+void CRDAGamesView::OnPaint()
+{
+	CPaintDC dc(this); // device context for painting
+	CRect RectToDrawBackGround;
+
+	GetClientRect(RectToDrawBackGround);
+	dc.FillSolidRect(RectToDrawBackGround, RGB(255, 255, 128));
+	CRDAGamesDoc* pDoc = GetDocument();
+	pDoc->m_CardImages.theCardImages[CARDBACK].BitBlt(dc,10,19, SRCCOPY);
+}
+
